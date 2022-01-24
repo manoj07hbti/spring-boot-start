@@ -1,7 +1,19 @@
 package com.edu.springbootstart.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
+@Entity(name = "STUDENT_TABLE_MORNING")
 public class Student {
 
+    @Id
+    @GeneratedValue // Automatically increment current 0,1,2,3,......14,15
+    Long id;// primary key unique value
+
+    @Column(name = "STD_NAME")
     String name;
     int age;
     String section;
@@ -10,6 +22,9 @@ public class Student {
         this.name = name;
         this.age = age;
         this.section = section;
+    }
+// DEFAULT CONSTRUCTOR
+    public Student() {
     }
 
     public String getName() {
